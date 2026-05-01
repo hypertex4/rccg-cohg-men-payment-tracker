@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Capacitor generated
+android/app/src/main/assets/public/
+ios/App/App/public/
+capacitor-cordova-ios-plugins/
+
+# Environment / secrets
+.env
+.env.*
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.user
+
+# OS
+.DS_Store
+Thumbs.db

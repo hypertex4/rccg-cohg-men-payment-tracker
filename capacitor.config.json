@@ -1,0 +1,26 @@
+{
+  "appId": "com.rccgcohg.paymenttracker",
+  "appName": "RCCG Tracker",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "backgroundColor": "#1976D2"
+  },
+  "ios": {
+    "backgroundColor": "#1976D2"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": true,
+      "backgroundColor": "#1976D2",
+      "androidSplashResourceName": "splash",
+      "showSpinner": false
+    },
+    "StatusBar": {
+      "style": "Light",
+      "backgroundColor": "#1565C0"
+    }
+  }
+}

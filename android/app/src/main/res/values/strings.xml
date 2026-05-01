@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">RCCG Tracker</string>
+    <string name="title_activity_main">RCCG Tracker</string>
+    <string name="package_name">com.rccgcohg.paymenttracker</string>
+    <string name="custom_url_scheme">com.rccgcohg.paymenttracker</string>
+</resources>
