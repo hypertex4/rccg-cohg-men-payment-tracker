@@ -47,6 +47,8 @@ export const getPayments  = () => parse(K.PAYMENTS, []);
 export const savePayments = (d) => localStorage.setItem(K.PAYMENTS, JSON.stringify(d));
 export const getPrograms  = () => parse(K.PROGRAMS, []);
 export const savePrograms = (d) => localStorage.setItem(K.PROGRAMS, JSON.stringify(d));
+export const getNotes     = () => parse('rccg_notes', []);
+export const saveNotes    = (d) => localStorage.setItem('rccg_notes', JSON.stringify(d));
 export const getSession   = () => localStorage.getItem(K.SESSION) === '1';
 export const setSession   = ()  => localStorage.setItem(K.SESSION, '1');
 export const clearSession = ()  => localStorage.removeItem(K.SESSION);

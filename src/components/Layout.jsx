@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {
   HomeIcon, UsersIcon, PlusCircleIcon, HistoryIcon,
   LogoutIcon, MenuIcon, CloseIcon, RCCGLogo,
-  ProgramIcon, AnalyticsIcon,
+  ProgramIcon, AnalyticsIcon, NoteIcon,
 } from './Icons';
 import { availableYears } from '../utils/helpers';
 
@@ -13,6 +13,7 @@ const NAV = [
   { id: 'record-payment',  label: 'Record Payment',   Icon: PlusCircleIcon },
   { id: 'payment-history', label: 'Payment History',  Icon: HistoryIcon },
   { id: 'analysis',        label: 'Analysis',         Icon: AnalyticsIcon },
+  { id: 'notes',           label: 'Notes & Minutes',  Icon: NoteIcon },
 ];
 
 const PAGE_TITLE = {
@@ -22,6 +23,7 @@ const PAGE_TITLE = {
   'record-payment': 'Record Payment',
   'payment-history':'Payment History',
   analysis:         'Analysis',
+  notes:            'Notes & Minutes',
 };
 
 function SidebarInner({ page, onNavigate, onLogout, onClose }) {

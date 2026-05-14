@@ -7,10 +7,12 @@ import RecordPayment from './components/RecordPayment';
 import PaymentHistory from './components/PaymentHistory';
 import Programs from './components/Programs';
 import Analysis from './components/Analysis';
+import Notes from './components/Notes';
 import {
   getMembers, saveMembers,
   getPayments, savePayments,
   getPrograms, savePrograms,
+  getNotes, saveNotes,
   getSession, setSession, clearSession,
 } from './utils/storage';
 import { uid } from './utils/helpers';
@@ -21,6 +23,7 @@ export default function App() {
   const [members,   setMembers]   = useState(getMembers);
   const [payments,  setPayments]  = useState(getPayments);
   const [programs,  setPrograms]  = useState(getPrograms);
+  const [notes,     setNotes]     = useState(getNotes);
   const [year,      setYear]      = useState(() => {
     const s = localStorage.getItem('rccg_year');
     return s ? Number(s) : new Date().getFullYear();
@@ -45,6 +48,11 @@ export default function App() {
   const editProgram   = (id, data) => { const u = programs.map(p => p.id === id ? { ...p, ...data } : p); setPrograms(u); savePrograms(u); };
   const deleteProgram = (id) => { const u = programs.filter(p => p.id !== id); setPrograms(u); savePrograms(u); };
 
+  // Notes
+  const addNote    = (n) => { const u = [...notes, n]; setNotes(u); saveNotes(u); };
+  const editNote   = (n) => { const u = notes.map(x => x.id === n.id ? n : x); setNotes(u); saveNotes(u); };
+  const deleteNote = (id) => { const u = notes.filter(n => n.id !== id); setNotes(u); saveNotes(u); };
+
   if (!loggedIn) return <Auth onLogin={login} />;
 
   const pages = {
@@ -54,6 +62,7 @@ export default function App() {
     'record-payment': <RecordPayment members={members} programs={programs} onAddPayment={addPayment} onNavigate={setPage} />,
     'payment-history':<PaymentHistory payments={payments} members={members} programs={programs} year={year} />,
     analysis:         <Analysis payments={payments} members={members} programs={programs} year={year} />,
+    notes:            <Notes notes={notes} onAdd={addNote} onEdit={editNote} onDelete={deleteNote} />,
   };
 
   return (
